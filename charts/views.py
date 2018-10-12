@@ -20,6 +20,16 @@ def get_data(request, *args, **kwargs):
         "customers": 10,
     }
     return JsonResponse(data) # http response
+	
+def get_guagedata(request, *args, **kwargs):
+    data = {
+        "sales": 100,
+        "customers": 10,
+    }
+    return JsonResponse(data) # http response
+
+def guage(request, *args, **kwargs):
+    return render(request, 'guage.html', {"customers": 10})
 
 class ChartData(APIView):
     authentication_classes = []
